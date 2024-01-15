@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Exercice JavaScript</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
   </head>
   <body>
     <header>
@@ -39,9 +41,9 @@
             </tr>
           </tbody>
         </table>
-        <button>Acheter un sac de pommes</button>
-        <button>Acheter un sac de poires</button>
-        <button>Acheter un sac de prunes</button>
+        <button type="button" id="1" onclick="add(panier,prix,poids,this)">Acheter un sac de pommes</button>
+        <button type="button" id="2" onclick="add(panier,prix,poids,this)">Acheter un sac de poires</button>
+        <button type="button" id="3" onclick="add(panier,prix,poids,this)">Acheter un sac de prunes</button>
       </section>
       <section>
         <h2>Vos achats</h2>
