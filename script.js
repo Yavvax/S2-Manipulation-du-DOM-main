@@ -18,7 +18,7 @@ const poids = {
 }
 
 //https://stackoverflow.com/questions/18410341/using-multiple-buttons-on-same-function-that-redirects-to-different-functions
-function add(button)
+function add(panier,prix,poids,button)
 {
     let x = button.id
     switch (x)
