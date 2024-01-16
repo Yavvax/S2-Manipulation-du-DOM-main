@@ -1,20 +1,20 @@
-const panier = {
-    pommes : 0,
-    poires : 0,
-    prunes : 0,
-    total : 0
-}
+let panier = [
+    [0 ,0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+];
 const prix = {
-    prixPommes : 0,
-    prixPoires : 0,
-    prixPrunes : 0,
-    prixTotal : 0
+    prixPommes : 13.50,
+    prixPoires : 20,
+    prixPrunes : 22,
+
 }
 const poids = {
-    poidsPommes : 0,
-    poidsPoires : 0,
-    poidsPrunes : 0,
-    poidsTotal: 0
+    poidsPommes : 10,
+    poidsPoires : 12,
+    poidsPrunes : 15,
+
 }
 
 //https://stackoverflow.com/questions/18410341/using-multiple-buttons-on-same-function-that-redirects-to-different-functions
@@ -24,13 +24,49 @@ function add(panier,prix,poids,button)
     switch (x)
     {
         case '1' :
-            addPomme(panier,prix,poids);
+            panier[0][0] += 1;
+            panier[0][1] += prix.prixPommes;
+            panier[0][2] += poids.poidsPommes;
+            panier[3][0] += 1;
+            panier[3][1] += prix.prixPommes;
+            panier[3][2] += poids.poidsPommes;
+
+            document.querySelector("#qtePommes").textContent = panier[0][0];
+            document.querySelector("#prixPommes").textContent = panier[0][1].toFixed(2);
+            document.querySelector("#poidsPommes").textContent = panier[0][2];
+            document.querySelector("#qteTotal").textContent = panier[3][0];
+            document.querySelector("#prixTotal").textContent = panier[3][1];
+            document.querySelector("#poidsTotal").textContent = panier[3][2];
             break;
         case '2' :
-            addPoire(panier,prix,poids);
+            panier[1][0] += 1;
+            panier[1][1] += prix.prixPoires;
+            panier[1][2] += poids.poidsPoires;
+            panier[3][0] += 1;
+            panier[3][1] += prix.prixPoires;
+            panier[3][2] += poids.poidsPoires;
+
+            document.querySelector("#qtePoires").textContent = panier[1][0];
+            document.querySelector("#prixPoires").textContent = panier[1][1].toFixed(2);
+            document.querySelector("#poidsPoires").textContent = panier[1][2];
+            document.querySelector("#qteTotal").textContent = panier[3][0];
+            document.querySelector("#prixTotal").textContent = panier[3][1];
+            document.querySelector("#poidsTotal").textContent = panier[3][2];
             break;
         case '3' :
-            addPrune(panier, prix, poids);
+            panier[2][0] += 1;
+            panier[2][1] += prix.prixPrunes
+            panier[2][2] += poids.poidsPrunes
+            panier[3][0] += 1;
+            panier[3][1] += prix.prixPrunes;
+            panier[3][2] += poids.poidsPrunes;
+
+            document.querySelector("#qtePrunes").textContent = panier[2][0];
+            document.querySelector("#prixPrunes").textContent = panier[2][1].toFixed(2);
+            document.querySelector("#poidsPrunes").textContent = panier[2][2];
+            document.querySelector("#qteTotal").textContent = panier[3][0];
+            document.querySelector("#prixTotal").textContent = panier[3][1];
+            document.querySelector("#poidsTotal").textContent = panier[3][2];
             break;
         default :
             return false;
@@ -52,9 +88,9 @@ function addPomme(panier, prix, poids)
     document.querySelector("#qtePommes").textContent = panier.pommes;
     document.querySelector("#prixPommes").textContent = prix.prixPommes;
     document.querySelector("#poidsPommes").textContent = poids.poidsPommes;
-    document.querySelector("#qteTotal").textContent = panier.total;
-    document.querySelector("#prixTotal").textContent = prix.prixTotal;
-    document.querySelector("#poidsTotal").textContent = poids.poidsTotal;
+    document.querySelector("#qteTotal").textContent = panier[4][0];
+    document.querySelector("#prixTotal").textContent = panier[4][1];
+    document.querySelector("#poidsTotal").textContent = panier[4][2];
 
 
 
